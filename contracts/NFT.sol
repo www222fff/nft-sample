@@ -16,8 +16,8 @@ contract NFT is ERC721 {
     nextTokenId++;
   }
 
-  function _baseURI() internal view override returns (string memory) {
-    return '';
+  function _baseURI() internal pure override returns (string memory) {
+    return 'https://yourfirstnft.herokuapp.com/';
   }
 
 }
