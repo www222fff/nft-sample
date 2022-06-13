@@ -8,7 +8,7 @@ const app = new Koa();
 
 app
   .use(cors())
-  .use(serve(path.join(__dirname + './images')))
+  .use(serve(path.join(__dirname, './images')))
   .use(router.routes());
 
 
