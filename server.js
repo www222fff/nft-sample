@@ -8,8 +8,11 @@ const app = new Koa();
 
 app
   .use(cors())
-  .use(serve(path.join(__dirname, './images')))
-  .use(router.routes());
+  .use(serve(path.join(__dirname,'./images')))
+  .use(router.routes())
+  .use( async (ctx) => {
+   ctx.body = 'hello world'
+});
 
 
 app.listen(process.env.PORT || 3000, '0.0.0.0', function () {                                                                                                             
