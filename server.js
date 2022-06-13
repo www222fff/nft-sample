@@ -2,12 +2,13 @@ const Koa = require('koa');
 const cors = require('@koa/cors');
 const serve = require('koa-static');
 const router = require('./router.js');
+const path = require('path');
 
 const app = new Koa();
 
 app
   .use(cors())
-  .use(serve('./images'))
+  .use(serve(path.join(__dirname + './images')))
   .use(router.routes());
 
 app.listen(process.env.PORT || 3000, '0.0.0.0', function () {                                                                                                             
