@@ -9,6 +9,7 @@ const app = new Koa();
 app
   .use(cors())
   .use(serve(path.join(__dirname + './images')))
+  .use(router.routes());
 
 
 app.listen(process.env.PORT || 3000, '0.0.0.0', function () {                                                                                                             
